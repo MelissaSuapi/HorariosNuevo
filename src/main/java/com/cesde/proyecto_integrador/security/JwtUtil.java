@@ -11,11 +11,17 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-    @Value("${jwt.secret}")
-    private String SECRET_KEY;
 
-    @Value("${jwt.expiration}")
-    private long EXPIRATION_TIME;
+    private final String SECRET_KEY;
+    private final long EXPIRATION_TIME;
+
+    public JwtUtil(
+        @Value("${jwt.secret}") String secretKey,
+        @Value("${jwt.expiration}") long expirationTime
+    ) {
+        this.SECRET_KEY = secretKey;
+        this.EXPIRATION_TIME = expirationTime;
+    }
 
     public String generateToken(String username, String role) {
         return Jwts.builder()
