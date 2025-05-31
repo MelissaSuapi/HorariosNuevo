@@ -3,6 +3,7 @@ package com.cesde.proyecto_integrador.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.cesde.proyecto_integrador.dto.HorariosDTO;
 import com.cesde.proyecto_integrador.model.Horarios;
 import com.cesde.proyecto_integrador.service.impl.HorarioService;
 
@@ -29,10 +30,10 @@ public class HorarioController {
     }
 
     // Crear un nuevo horario
-    @PostMapping
-    public Horarios createHorario(@RequestBody Horarios horarios) {
-        return horarioService.createHorario(horarios);
-    }
+   @PostMapping
+public Horarios createHorario(@RequestBody HorariosDTO dto) {
+    return horarioService.createHorario(dto);
+}
 
     // Actualizar un horario existente
     @PutMapping("/{id}")
