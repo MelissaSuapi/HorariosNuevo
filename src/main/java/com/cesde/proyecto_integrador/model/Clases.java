@@ -1,8 +1,7 @@
 package com.cesde.proyecto_integrador.model;
-import java.util.List; 
+import java.util.List;
 
-
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -29,7 +28,9 @@ public class Clases {
     @Column(name = "hora_fin")
     private String hora_fin;
 
+
     @OneToMany(mappedBy = "clases")
+    @JsonManagedReference(value = "clase-horario")
     private List<Horarios> horarios;
 
 

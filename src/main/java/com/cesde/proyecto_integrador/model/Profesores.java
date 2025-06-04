@@ -2,7 +2,9 @@ package com.cesde.proyecto_integrador.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import java.util.List; 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference; 
 
 @Data
 @Entity
@@ -21,6 +23,7 @@ public class Profesores {
     private String email;
 
     @OneToMany(mappedBy = "profesor")
+    @JsonManagedReference(value = "profesor-horario")
     private List<Horarios> horarios;
 
 
