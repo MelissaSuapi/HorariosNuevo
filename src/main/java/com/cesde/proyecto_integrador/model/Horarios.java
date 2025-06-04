@@ -31,7 +31,5 @@ public class Horarios {
     @JsonBackReference(value = "estudiante-horario")
     private Estudiantes estudiante;
 
-    private String dia;
-    private String horaInicio;
-    private String horaFin;
+    
 }

@@ -45,9 +45,6 @@ public class HorarioService {
                 .orElseThrow(() -> new RuntimeException("Estudiante no encontrado"));
 
         Horarios horario = new Horarios();
-        horario.setDia(dto.getDia());
-        horario.setHoraInicio(dto.getHoraInicio());
-        horario.setHoraFin(dto.getHoraFin());
         horario.setClases(clase);
         horario.setProfesor(profesor);
         horario.setEstudiante(estudiante);
