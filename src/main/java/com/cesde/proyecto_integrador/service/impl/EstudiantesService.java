@@ -26,11 +26,9 @@ public class EstudiantesService {
         return estudiantesRepository.findById(id);
     }
 
-    public Estudiantes createEstudiante(Estudiantes estudiante) {
-        String hashedPassword = passwordEncoder.encode(estudiante.getPassword());
-        estudiante.setPassword(hashedPassword);
-        return estudiantesRepository.save(estudiante);
-    }
+  public Estudiantes createEstudiante(Estudiantes estudiante) {
+    return estudiantesRepository.save(estudiante);
+}
 
     public Estudiantes updateEstudiante(Long id, Estudiantes estudianteDetails) {
         Optional<Estudiantes> estudianteOptional = estudiantesRepository.findById(id);
